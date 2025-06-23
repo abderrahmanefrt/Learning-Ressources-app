@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <The-Header title="Remember me"></The-Header>
+    <Stored-ressources :resources="storedResources"></Stored-ressources>
+    <The-Ressources></The-Ressources>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import StoredRessources from './components/learning-ressources/StoredRessources.vue'
+import TheHeader from './components/layouts/TheHeader.vue'
+import TheRessources from './components/learning-ressources/TheResources.vue'
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    StoredRessources,
+    TheHeader,
+    TheRessources,
+
+  },
+
   }
-}
+
+ 
 </script>
 
 <style>
