@@ -1,30 +1,25 @@
 <template>
-  
   <base-card>
-  <form @submit.prevent="submitData">
-<div class="form-controler">
-<label for="">Title</label>
-    <input type="text" name="title" id="title">
+    <form @submit.prevent="submitData">
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" ref="title" />
+      </div>
 
-</div>
-<div class="form-controler">
-<label for="">Description</label>
-    <textarea type="text" name="title" id="description" rows="3"> </textarea>
+      <div class="form-control">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" rows="3" ref="description"></textarea>
+      </div>
 
-</div>
-<div class="form-controler">
-<label for="link">Link</label>
-    <input type="url" name="link" id="link">
+      <div class="form-control">
+        <label for="link">Link</label>
+        <input type="url" name="link" id="link" ref="link" />
+      </div>
 
-</div>
-<div>
-  <base-button type="submit">Add Ressource</base-button>
-</div>
-    
-    
-    
-  </form>
-  
+      <div>
+        <base-button type="submit">Add Resource</base-button>
+      </div>
+    </form>
   </base-card>
 </template>
 
@@ -32,11 +27,11 @@
 export default {
   inject: ['addResources'],
   methods: {
-    Submitdata(){
-      const entereredTitle = this.$refs.title.value;
-      const enteredDescription= this.$refs.description.value
+    submitData() {
+      const enteredTitle = this.$refs.title.value;
+      const enteredDescription = this.$refs.description.value;
       const enteredUrl = this.$refs.link.value;
-      this.addResources(entereredTitle, enteredDescription, enteredUrl)
+      this.addResources(enteredTitle, enteredDescription, enteredUrl);
     }
   }
 }
